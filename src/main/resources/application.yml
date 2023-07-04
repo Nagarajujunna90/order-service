@@ -1,26 +1,5 @@
 server:
   port: 8083
-#eureka:
-#  client:
-#    register-with-eureka: true
-#    fetch-registry: true
-#  instance:
-#    hostname: localhost
-#springdoc:
-#  swagger-ui:
-##    path: /swagger-ui.html
-##    display-request-duration: true
-##    groups-order: DESC
-##    operationsSorter: method
-#    disable-swagger-default-url: true
 spring:
-  application:
-    name: order-service
-  datasource:
-    password: root
-    url: jdbc:mysql://localhost:3306/e-order?useSSL=true
-    username: root
-  jpa:
-    hibernate:
-      ddl-auto: 'update'
-    show-sql: true
+  profiles:
+    active: local

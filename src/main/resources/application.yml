@@ -6,6 +6,13 @@ server:
 #    fetch-registry: true
 #  instance:
 #    hostname: localhost
+#springdoc:
+#  swagger-ui:
+##    path: /swagger-ui.html
+##    display-request-duration: true
+##    groups-order: DESC
+##    operationsSorter: method
+#    disable-swagger-default-url: true
 spring:
   application:
     name: order-service

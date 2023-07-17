@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class OrderServiceImpl implements OrderService {
     @Autowired
-    private OrderRepo orderRepo;
+    private final OrderRepo orderRepo;
 
     public OrderServiceImpl(OrderRepo orderRepo) {
         this.orderRepo = orderRepo;
@@ -24,8 +24,8 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Order updateOrder(Order orderRequest, Integer orderId) {
         orderRequest.setId(orderId);
-        return orderRepo.save(orderRequest)
-                ;
+        return orderRepo.save(orderRequest);
+
     }
 
     @Override

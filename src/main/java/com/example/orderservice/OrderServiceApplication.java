@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
 @OpenAPIDefinition(info = @Info(title = "order-service"))
-@SpringBootApplication(exclude = KafkaAutoConfiguration.class)
+@SpringBootApplication
 @RestController
 //@EnableEurekaClient
 public class OrderServiceApplication {

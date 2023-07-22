@@ -1,5 +1,6 @@
 package com.example.orderservice.controller;
 
+import com.example.orderservice.dto.OrderRequest;
 import com.example.orderservice.model.Order;
 import com.example.orderservice.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,30 +21,30 @@ public class OrderController {
     }
 
     @PostMapping("/order")
-    public ResponseEntity<Order> createOrder(@RequestBody Order orderRequest) {
-        Order order = orderService.createOrder(orderRequest);
+    public ResponseEntity<?> createOrder(@RequestBody OrderRequest orderRequest) {
+        String order = orderService.createOrder(orderRequest);
         return new ResponseEntity<>(order, HttpStatus.OK);
     }
     @PutMapping("/order/{orderId}")
-    public ResponseEntity<Order> updateOrder(@RequestBody Order orderRequest, @PathVariable("id") Integer orderId) {
+    public ResponseEntity<?> updateOrder(@RequestBody Order orderRequest, @PathVariable("id") Integer orderId) {
         Order order = orderService.updateOrder(orderRequest,orderId);
         return new ResponseEntity<>(order, HttpStatus.OK);
     }
 
     @GetMapping("/order/{orderId}")
-    public ResponseEntity<Order> getOrderById( @PathVariable("orderId") Integer orderId) {
+    public ResponseEntity<?> getOrderById( @PathVariable("orderId") Integer orderId) {
         Order order = orderService.getOrderById(orderId);
         return new ResponseEntity<>(order, HttpStatus.OK);
     }
 
     @GetMapping("/orders")
-    public ResponseEntity<List<Order> > getAllOrders( ) {
+    public ResponseEntity<List<?> > getAllOrders( ) {
         List<Order> orderList = orderService.getAllOrders();
         return new ResponseEntity<>(orderList, HttpStatus.OK);
     }
 
     @DeleteMapping("/order/{orderId}")
-    public ResponseEntity<String> deleteOrderById( @PathVariable("id") Integer orderId) {
+    public ResponseEntity<?> deleteOrderById( @PathVariable("id") Integer orderId) {
         orderService.deleteOrderById(orderId);
         return new ResponseEntity<>("Deleted successfully", HttpStatus.OK);
     }

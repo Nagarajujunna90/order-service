@@ -1,8 +1,11 @@
 package com.example.orderservice.service;
 
+import com.example.orderservice.dto.OrderRequest;
 import com.example.orderservice.model.Order;
 import com.example.orderservice.repo.OrderRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,13 +15,22 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private final OrderRepo orderRepo;
 
+    @Autowired
+    KafkaTemplate kafkaTemplate;
+
+    @Value("${spring.kafka.topics.create-order}")
+    String createOrder;
+
     public OrderServiceImpl(OrderRepo orderRepo) {
         this.orderRepo = orderRepo;
     }
 
     @Override
-    public Order createOrder(Order orderRequest) {
-        return orderRepo.save(orderRequest);
+    public String createOrder(OrderRequest orderRequest) {
+        Order order = new Order(orderRequest);
+        Order responseOrder = orderRepo.save(order);
+        kafkaTemplate.send(createOrder, responseOrder);
+        return "Order created successfully";
     }
 
     @Override
@@ -36,11 +48,11 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<Order> getAllOrders() {
-        return orderRepo.findAll();
+        return (List<Order>) orderRepo.findAll().iterator();
     }
 
     @Override
     public void deleteOrderById(Integer orderId) {
-        
+
     }
 }

@@ -1,5 +1,21 @@
 server:
-  port: 8083
+  port: 8088
+
+
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#  instance:
+#    hostname: localhost
+#springdoc:
+#  swagger-ui:
+##    path: /swagger-ui.html
+##    display-request-duration: true
+##    groups-order: DESC
+##    operationsSorter: method
+#    disable-swagger-default-url: true
+
 spring:
   profiles:
     active: local

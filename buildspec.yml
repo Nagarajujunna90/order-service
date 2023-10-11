@@ -9,7 +9,6 @@ phases:
     commands:
       - echo App packaged on `date`
 artifacts:
-  type: jar
   files:
-    - "target/order-service.jar"
-  discard-paths: yes
+    - appspec.yml
+    - target/order-service.jar

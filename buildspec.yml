@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo Packaging app on `date`
+      - mvn clean package
+  post_build:
+    commands:
+      - echo App packaged on `date`
+  artifacts:
+  type: jar
+  files:
+    - "target/order-service.jar"
+  discard-paths: yes

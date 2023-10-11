@@ -18,4 +18,4 @@ server:
 
 spring:
   profiles:
-    active: local
+    active: aws

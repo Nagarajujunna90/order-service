@@ -11,4 +11,4 @@ phases:
 artifacts:
   files:
     - appspec.yml
-    - target/order-service-0.0.01-SNAPSHOT.jar
+    - target/order-service-0.0.1-SNAPSHOT.jar

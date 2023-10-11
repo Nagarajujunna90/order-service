@@ -1,9 +1,9 @@
-package com.example.orderservice.service;
+package com.example.order.service;
 
 
 
-import com.example.orderservice.model.EventStore;
-import com.example.orderservice.repo.EventRepository;
+import com.example.order.model.EventStore;
+import com.example.order.repo.EventRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;

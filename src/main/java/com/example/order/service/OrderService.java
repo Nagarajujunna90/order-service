@@ -1,7 +1,7 @@
-package com.example.orderservice.service;
+package com.example.order.service;
 
-import com.example.orderservice.dto.OrderRequest;
-import com.example.orderservice.model.Order;
+import com.example.order.dto.OrderRequest;
+import com.example.order.model.Order;
 
 import java.util.List;
 

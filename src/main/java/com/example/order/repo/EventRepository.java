@@ -1,6 +1,6 @@
-package com.example.orderservice.repo;
+package com.example.order.repo;
 
-import com.example.orderservice.model.EventStore;
+import com.example.order.model.EventStore;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 

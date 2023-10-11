@@ -4,6 +4,6 @@ Resources:
       Type: AWS::Lambda::Function
       Properties:
         Name: "order-service"
-        Alias: "orderServiceAlias"
+        Alias: "prod"
         CurrentVersion: "1"
         TargetVersion: "2"

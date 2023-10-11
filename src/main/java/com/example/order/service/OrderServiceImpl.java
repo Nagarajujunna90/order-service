@@ -1,8 +1,8 @@
-package com.example.orderservice.service;
+package com.example.order.service;
 
-import com.example.orderservice.dto.OrderRequest;
-import com.example.orderservice.model.Order;
-import com.example.orderservice.repo.OrderRepo;
+import com.example.order.dto.OrderRequest;
+import com.example.order.model.Order;
+import com.example.order.repo.OrderRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;

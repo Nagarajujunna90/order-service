@@ -1,8 +1,8 @@
-package com.example.orderservice.service;
+package com.example.order.service;
 
 
 
-import com.example.orderservice.model.EventStore;
+import com.example.order.model.EventStore;
 
 import java.time.LocalDateTime;
 

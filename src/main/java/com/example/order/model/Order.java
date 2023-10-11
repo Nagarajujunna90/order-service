@@ -1,12 +1,11 @@
-package com.example.orderservice.model;
+package com.example.order.model;
 
 
-import com.example.orderservice.dto.OrderRequest;
+import com.example.order.dto.OrderRequest;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 @Data
 @Entity

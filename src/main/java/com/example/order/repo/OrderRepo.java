@@ -1,7 +1,6 @@
-package com.example.orderservice.repo;
+package com.example.order.repo;
 
-import com.example.orderservice.model.Order;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.example.order.model.Order;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

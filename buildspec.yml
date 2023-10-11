@@ -10,5 +10,5 @@ phases:
       - echo App packaged on `date`
 artifacts:
   files:
-    - appspec.yml
+    - appspec.yaml
     - target/order-service-0.0.1-SNAPSHOT.jar

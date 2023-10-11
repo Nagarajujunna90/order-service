@@ -1,4 +1,6 @@
 version: 0.0
+files:
+  - source: ./my-app-1.0-SNAPSHOT.jar
 Resources:
   - myLambdaFunction:
       Type: AWS::Lambda::Function

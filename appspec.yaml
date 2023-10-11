@@ -1,14 +1,9 @@
 version: 0.0
-files:
-  - source: ./my-app-1.0-SNAPSHOT.jar
 Resources:
   - myLambdaFunction:
       Type: AWS::Lambda::Function
       Properties:
         Name: "order-service"
         Alias: "orderServiceAlias"
-        CurrentVersion: "1"
+        CurrentVersion: "$latest"
         TargetVersion: "2"
-Hooks:
-  - BeforeAllowTraffic: "LambdaFunctionToValidateBeforeTrafficShift"
-  - AfterAllowTraffic: "LambdaFunctionToValidateAfterTrafficShift"

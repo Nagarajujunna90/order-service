@@ -8,7 +8,7 @@ phases:
   post_build:
     commands:
       - echo App packaged on `date`
-  artifacts:
+artifacts:
   type: jar
   files:
     - "target/order-service.jar"

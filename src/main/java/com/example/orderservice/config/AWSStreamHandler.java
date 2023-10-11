@@ -14,17 +14,14 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class AWSStreamHandler implements RequestStreamHandler {
-    private static final SpringBootLambdaContainerHandler<AwsProxyRequest, AwsProxyResponse> handler;
-
+    private static SpringBootLambdaContainerHandler<AwsProxyRequest, AwsProxyResponse> handler;
     static {
         try {
-            handler = new SpringBootProxyHandlerBuilder<AwsProxyRequest>()
-                    .defaultProxy()
-                    .asyncInit()
-                    .springBootApplication(OrderServiceApplication.class)
-                    .buildAndInitialize();
+            handler = SpringBootLambdaContainerHandler.getAwsProxyHandler(OrderServiceApplication.class);
+            // If you are using HTTP APIs with the version 2.0 of the proxy model, use the getHttpApiV2ProxyHandler
+            // method: handler = SpringBootLambdaContainerHandler.getHttpApiV2ProxyHandler(Application.class);
         } catch (ContainerInitializationException e) {
-            // if we fail here, we re-throw the exception to force another cold start
+            // if we fail here. We re-throw the exception to force another cold start
             e.printStackTrace();
             throw new RuntimeException("Could not initialize Spring Boot application", e);
         }

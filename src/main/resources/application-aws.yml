@@ -20,3 +20,24 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  kafka:
+    autoStartup: false
+    bootstrap-servers: localhost:9092
+    #    ssl:
+    #      trust-store-type: SSL
+    #      key-store-key:
+    #      key-store-password:
+    #      key-store-location:
+    #    security:
+    #      protocol: SASL_SSL
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: nagaraju
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      enable-auto-commit: false
+    topics:
+      create-order: createOrder
